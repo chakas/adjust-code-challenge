@@ -31,4 +31,30 @@ REST Endpoint:
 Common API Endpoints:
 ===
 1. Show the number of impressions and clicks that occurred before the 1st of June 2017, broken down by channel and country, sorted by clicks in descending order.
-	- URL : `http://`
+	- URL : `http://localhost:8000/metrics/?group=channel,country&agg=impressions,clicks&where={"date_to":"2017-06-01"}&sort=-clicks`
+	- Output : `{
+                "data": [
+                    {
+                        "channel": "adcolony",
+                        "country": "US",
+                        "impressions": 532608,
+                        "clicks": 13089
+                        },
+                    ...
+    }`
+    
+2. Show the number of installs that occurred in May of 2017 on iOS, broken down by date, sorted by date in ascending order.
+    - URL : `http://localhost:8000/metrics/?where={"date_from":"2017-05-01","date_to":"2017-05-31"}&group=date&agg=installs&sort=date` 
+    - Output : `{
+                    "data": [
+                                {
+                                "date": "2017-05-17",
+                                "installs": 1307
+                                },
+                                {
+                                "date": "2017-05-18",
+                                "installs": 1405
+                                }
+                        ]
+                 } 
+                `
