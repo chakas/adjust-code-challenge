@@ -10,7 +10,7 @@ Installation:
 - Run command `virtualenv -p python3 .`
 - Activate the virtualenv using command `source bin/activate`
 - Upon activating install dependencies using `pip install -r requirements.txt`
-- `cd <place holder>` and run `python manage.py runserver`
+- `cd adjust` and run `python manage.py runserver`
 
 REST Endpoint:
 ==
